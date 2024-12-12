@@ -1,0 +1,5 @@
+<h1>Buscar país europeu</h1>
+<form [formGroup]="formPesquisarPais">
+    <input class="form-control" type="text" name="nome" id="nome" formControlName="nome" placeholder="Digine o nome de um país europeu para ver as suas informações.">
+    <input class="btn btn-primary" type="button" value="Buscar por país" [disabled]="formPesquisarPais.invalid" (click)="buscar()">
+</form>
