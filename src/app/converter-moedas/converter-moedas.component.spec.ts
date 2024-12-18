@@ -10,7 +10,7 @@ describe('ConverterMoedasComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ConverterMoedasComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ConverterMoedasComponent);
     component = fixture.componentInstance;

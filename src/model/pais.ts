@@ -30,14 +30,14 @@ export class InformacoesDoPais {
         nome: string;
     }];
     governo: {
-        capital:{
-            nome: string
+        capital: {
+            nome: string;
         };
     };
     "unidades-monetarias": [{
         id: {
             "ISO-4217-ALPHA": string;
-        }
+        };
         nome: string;
     }];
 };

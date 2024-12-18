@@ -10,7 +10,7 @@ describe('BuscarPaisEuropeuComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [BuscarPaisEuropeuComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BuscarPaisEuropeuComponent);
     component = fixture.componentInstance;
