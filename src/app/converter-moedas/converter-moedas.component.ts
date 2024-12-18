@@ -14,7 +14,7 @@ export class ConverterMoedasComponent implements OnChanges {
   conversaoFeita: boolean = false;
   moedaInexistente: boolean = false;
 
-  constructor(private fc: FazerConversaoService) { };
+  constructor(private fc: FazerConversaoService) {};
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['codigoMoeda'] && !changes['codigoMoeda'].firstChange) {

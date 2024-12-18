@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FazerConversaoService } from './services/fazer-conversao.service';
+import { FazerConversaoService } from './fazer-conversao.service';
 
 describe('FazerConversaoService', () => {
   let service: FazerConversaoService;
