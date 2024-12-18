@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BuscarPaisService {
 
   private API_1 = 'https://restcountries.com/v3.1';

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FazerConversaoService {
 
   private API = 'https://api.invertexto.com/v1';
