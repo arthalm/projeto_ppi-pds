@@ -1,5 +1,5 @@
 export class Conversao {
-    _BRL: {
+    "coin-code": {
         price: string,
     };
 };

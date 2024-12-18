@@ -1,5 +1,54 @@
 <h1>Buscar país europeu</h1>
 <form [formGroup]="formPesquisarPais">
-    <input class="form-control" type="text" name="nome" id="nome" formControlName="nome" placeholder="Digine o nome de um país europeu para ver as suas informações.">
-    <input class="btn btn-primary" type="button" value="Buscar por país" [disabled]="formPesquisarPais.invalid" (click)="buscar()">
+    <input class="form-control" type="text" name="nome" id="nome" formControlName="nome"
+        placeholder="Digite o nome de um país europeu para ver as suas informações.">
+    <input class="btn btn-primary mt-2" type="button" value="Buscar por país" [disabled]="formPesquisarPais.invalid"
+        (click)="buscar()">
 </form>
+
+<div *ngIf="paisInexistente">
+    <div class="d-flex justify-content-center" id="diverro">
+        <div class="row">
+            <div class="col-12">
+                <h2 id="erro">Erro</h2>
+            </div>
+            <div class="col-12">
+                <span class="mdi mdi-close-circle-outline" id="spanerro"></span>
+            </div>
+            <div class="col-12">
+                <h3 id="textoerro">O país digitado não existe, foi digitado incorretamente, não é um país da Europa ou não consta na base dados da API. Por favor,
+                    tente novamente.</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div *ngIf="pesquisarPais?.length > 0 && infoPais" class="card mt-2 mb-2" style="width: 25rem;">
+        <img [src]="pesquisarPais[0].flags.svg" class="card-img-top border-bottom border-2" alt="Bandeira do país">
+        <div class="card-body pb-2">
+            <h5 class="card-title">{{infoPais.nome.abreviado}}</h5>
+            <ul class="card-text list-group list-group-flush">
+                <li class="list-group-item"><span class="mdi mdi-map-marker"></span>Localização: {{infoPais &&
+                    infoPais.localizacao && infoPais.localizacao.regiao ?
+                    infoPais.localizacao.regiao.nome : "não disponível"}}<br>
+                    Sub-região: {{infoPais && infoPais.localizacao['sub-regiao'] ?
+                    infoPais.localizacao['sub-regiao'].nome : "não disponível"}}</li>
+                <li class="list-group-item"><span class="mdi mdi-bank"></span>Capital do país: {{infoPais &&
+                    infoPais.governo && infoPais.governo.capital ? infoPais.governo.capital.nome : "não disponível"}}
+                </li>
+                <li class="list-group-item"><span class="mdi mdi-translate-variant"></span>Língua do país: {{infoPais &&
+                    infoPais.linguas && infoPais.linguas[0] ? infoPais.linguas[0].nome :
+                    "não disponível"}}</li>
+                <li class="list-group-item"><span class="mdi mdi-hand-coin"></span>Unidade monetária: {{infoPais &&
+                    infoPais['unidades-monetarias'] &&
+                    infoPais['unidades-monetarias'][0] ? infoPais['unidades-monetarias'][0].nome : "não disponível"}}
+                    ({{simbMoeda || "não disponível"}})
+                </li>
+                <li class="list-group-item">
+                    <app-converter-moedas [codigoMoeda]="codMoeda" [nomeMoeda]="nomeMoeda"></app-converter-moedas>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

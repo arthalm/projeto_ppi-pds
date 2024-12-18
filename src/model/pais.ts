@@ -1,6 +1,14 @@
 export class PesquisarPais {
     cca2: string;
     flag: string;
+    flags: {
+        svg: string;
+    };
+    currencies: {
+        [key: string]: {
+            symbol: string;
+        };
+    };
 };
 
 export class InformacoesDoPais {
@@ -21,10 +29,15 @@ export class InformacoesDoPais {
     linguas: [{
         nome: string;
     }];
+    governo: {
+        capital:{
+            nome: string
+        };
+    };
     "unidades-monetarias": [{
         id: {
             "ISO-4217-ALPHA": string;
         }
         nome: string;
-    }]
-}
+    }];
+};

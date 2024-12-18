@@ -1,0 +1,24 @@
+li {
+    list-style: none;
+}
+
+span {
+    padding-right: 5px;
+}
+
+#diverro {
+    text-align: center;
+}
+
+#erro {
+    color: red;
+}
+
+#spanerro {
+    font-size: 150px;
+    color: red;
+}
+
+#textoerro {
+    font-size: 25px;
+}

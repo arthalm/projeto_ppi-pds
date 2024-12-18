@@ -1,1 +1,12 @@
-<p>converter-moedas works!</p>
+<button class="btn btn-info" (click)="fazerConversao()">
+    <span class="mdi mdi-currency-usd"></span>
+    Converter moeda para o Real Brasileiro (R$)
+</button>
+
+<div *ngIf="moedaInexistente">
+    <p class="mt-2" id="erro"><b>O serviço de conversão do(a) {{nomeMoeda}} para o Real Brasileiro não está disponível.</b></p>
+</div>
+
+<div *ngIf="valorConvertido">
+    <p class="mt-2"><b>1 {{nomeMoeda}} = R${{valorConvertido}}</b></p>
+</div>
